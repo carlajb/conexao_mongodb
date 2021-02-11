@@ -1,0 +1,27 @@
+
+<h2> Registros do banco</h2>
+<hr>
+
+<a href="/admin/registros/add"><button type="button" class="btn btn-success">registrar</button></a>
+
+
+
+{{#each registros}}
+<div class="card" mt-4>
+<div class="card-body">
+    <h4>{{nome}}</h4>
+    <h4>{{email}}</h4><br>
+    <small>data da criacao do registro: {{date}}</small>
+
+    
+    <form action="/admin/registros/deletar/{{_id}}" method= "POST">
+         <input type="hidden" name="id" id="{{_id}}">
+        <button type="submit" class="btn btn-danger mt-2">Deletar registro</button>
+    </form>
+    
+    
+   
+</div>
+</div>
+{{else}}
+{{/each}}
